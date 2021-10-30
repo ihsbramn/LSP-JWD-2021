@@ -52,10 +52,10 @@
                             <h5 class="card-title">Kamar Standar</h5>
                             <p class="card-text">Kamar Hotel Standar Menawarkan fasilitas yang terbaik di harganya</p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer text-center">
                         <a href="daftarharga.php" class="btn btn-primary">Cek Harga</a>
                         <a href="pesankamar.php" class="btn btn-success">Pesan</a>
-                        <a href="videostandar.php" class="btn btn-info">Lihat Video</a>
+                        <a href="videostandar.php" class="btn btn-secondary text-white">Lihat Video</a>
                         </div>
                     </div>
                     </div>
@@ -66,10 +66,10 @@
                                         <h5 class="card-title">Kamar Deluxe</h5>
                                         <p class="card-text">Kamar Hotel Deluxe Menawarkan fasilitas yang terbaik di harganya</p>
                                     </div>
-                                    <div class="card-footer">
+                                    <div class="card-footer text-center">
                                     <a href="daftarharga.php" class="btn btn-primary">Cek Harga</a>
                                     <a href="pesankamar.php" class="btn btn-success">Pesan</a>
-                                    <a href="videodeluxe.php" class="btn btn-info">Lihat Video</a>
+                                    <a href="videodeluxe.php" class="btn btn-secondary text-white">Lihat Video</a>
                                     </div>
                         </div>
                     </div>
@@ -82,10 +82,10 @@
                                 <h5 class="card-title">Kamar Family</h5>
                                 <p class="card-text">Kamar Hotel Family Menawarkan fasilitas yang terbaik di harganya</p>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer text-center">
                             <a href="daftarharga.php" class="btn btn-primary">Cek Harga</a>
                             <a href="pesankamar.php" class="btn btn-success">Pesan</a>
-                            <a href="videofamily.php" class="btn btn-info">Lihat Video</a>
+                            <a href="videofamily.php" class="btn btn-secondary text-white">Lihat Video</a>
                             </div>
                         </div>
                 </div>
