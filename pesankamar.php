@@ -40,72 +40,96 @@
         </div>
       </nav>
 
-      <section style="margin-top: 100px;" >
+      <section style="margin-top: 80px;" >
     
       <h2 class="text-center" >Pesan Kamar</h2>
       <br><br>
         <div class="container">
-        <form action="process/proses_pesan.php" method="POST">
-        <input type="text" name="id" class="form-control" id="id" value="0" hidden>
-        <div class="mb-3">
-          <label for="nama" class="form-label">Nama Pemesan</label>
-          <input type="text" name="nama" class="form-control" id="nama" required>
-        </div>
-        <div class="mb-3">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="jeniskelamin" value="laki" id="jeniskelamin" checked>
-            <label class="form-check-label" for="laki">
-              Laki-Laki
-            </label>
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            <form action="process/proses_pesan.php" method="POST">
+              <!-- id -->
+              <input type="text" name="id" class="form-control" id="id" value="0" hidden>
+              <!-- id -->
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama Pemesan</label>
+                <!-- namna -->
+                <input type="text" name="nama" class="form-control" id="nama" required onkeydown="keyDown(event)">
+                <!-- nama -->
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <!-- jeniskelamin -->
+                  <input class="form-check-input" type="radio" name="jeniskelamin" value="laki-laki" id="jeniskelamin" checked>
+                  <label class="form-check-label" for="laki">
+                    Laki-Laki
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="jeniskelamin" value="perempuan" id="jeniskelamin" >
+                  <label class="form-check-label" for="perempuan">
+                    Perempuan
+                  </label>
+                  <!-- jeniskelamin -->
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="nik" class="form-label">Nomor Identitas</label>
+                <!-- nik -->
+                <input type="text" name="nik" class="form-control" id="nik" pattern=".{16,16}" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <!-- nik -->
+                <small id="nikhelp" class="form-text text-muted">16 digit NIK</small>
+              </div>
+              <div class="form-group mb-3">
+                <label for="tipe">Tipe Kamar</label>
+                <!-- tipe -->
+                <select class="form-control" name="tipe" id="tipe" onchange="SetHarga(event);">
+                  <option value="-">Pilih Kamar</option>
+                  <option value="Family">Family</option>
+                  <option value="Deluxe">Deluxe</option>
+                  <option value="Standar">Standar</option>
+                </select>
+                <!-- tipe -->
+              </div>
+              <div class="mb-3">
+                <label for="harga" class="form-label">Harga</label>
+                <input  type="text" class="form-control"  id="harga" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="tgl" class="form-label">Tanggal Pesan</label>
+                <input type="date" class="form-control" id="tgl">
+              </div>
+              <div class="mb-3">
+                <label for="durasi" class="form-label">Durasi Menginap</label>
+                <!-- durasi -->
+                <input type="number" class="form-control" name="durasi" id="durasi" onchange="SetHarga2(event); " min="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <!-- durasi -->
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="sarapan" onclick="SetHarga2(event);">
+                <label class="form-check-label" for="sarapan">
+                  Include Breakfast
+                </label>
+              </div>
+              <div class="mb-3">
+                <!-- discount -->
+                <input type="text" class="form-control" name="discount" value="0" id="discount" hidden>
+                <!-- discount -->
+              </div>
+              <div class="mb-3">
+                <label for="total" class="form-label">Total Bayar</label>
+                <!-- total -->
+                <input type="text" class="form-control" name="total" id="total" readonly>
+                <!-- total -->
+              </div>
+              <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+            </form>
+            </div>
+            <div class="col">
+            </div>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="jeniskelamin" value="perempuan" id="jeniskelamin" >
-            <label class="form-check-label" for="perempuan">
-              Perempuan
-            </label>
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="nik" class="form-label">Nomor Identitas</label>
-          <input type="text" name="nik" class="form-control" id="nik" pattern=".{16,16}" required>
-          <small id="nikhelp" class="form-text text-muted">16 digit NIK</small>
-        </div>
-        <div class="form-group mb-3">
-          <label for="tipe">Tipe Kamar</label>
-          <select class="form-control" name="tipe" id="tipe" onchange="SetHarga(event);">
-            <option value="-">Pilih Kamar</option>
-            <option value="Family">Family</option>
-            <option value="Deluxe">Deluxe</option>
-            <option value="Standar">Standar</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="harga" class="form-label">Harga</label>
-          <input  type="text" class="form-control"  id="harga" readonly>
-        </div>
-        <div class="mb-3">
-          <label for="tgl" class="form-label">Tanggal Pesan</label>
-          <input type="date" class="form-control" id="tgl">
-        </div>
-        <div class="mb-3">
-          <label for="durasi" class="form-label">Durasi Menginap</label>
-          <input type="number" class="form-control" name="durasi" id="durasi" onchange="SetHarga2(event);">
-        </div>
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="sarapan" onclick="SetHarga2(event);">
-          <label class="form-check-label" for="sarapan">
-            Include Breakfast
-          </label>
-        </div>
-        <div class="mb-3">
-          <input type="text" class="form-control" name="discount" value="0" id="discount" hidden>
-        </div>
-        <div class="mb-3">
-          <label for="total" class="form-label">Total Bayar</label>
-          <input type="text" class="form-control" name="total" id="total" readonly>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
         </div>
       </section>
       
@@ -148,17 +172,29 @@
           }; 
         };
 
-        // function SetHarga3(e){
-        //   if (document.getElementById('sarapan').checked) {
-        //     nyarap = durasi - 1 * 80000;
-        //   };
-        // };
+        function keyDown(e) { 
+          var e = window.event || e;
+          var key = e.keyCode;
+          //space pressed
+          if (key == 32) { //space
+            alert('Tidak Boleh ada spasi!');
+            e.preventDefault();
+          }
         
-        
-
-
+        }
 
       </script>
+
+      <!-- <script type='text/javascript'>
+          nama = document.getElementById('nama');
+          nama.on('keypress', function(e) {
+              if (e.which == 32){
+                  console.log('Nama tidak boleh ada spasi !');
+                  return false;
+              }
+        });
+        
+      </script> -->
 
 
 

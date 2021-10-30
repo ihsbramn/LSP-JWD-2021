@@ -19,4 +19,7 @@ Struktur File .
     ├── pesankamar.php              # halaman pesan kamar
     ├── produk.php                  # halaman produk
     ├── tetangkami.php              # halaman tentang kami
+    ├── videodeluxe.php             # halaman video deluxe
+    ├── videostandar.php            # halaman video standar
+    ├── videofamily.php             # halaman video fammily
     └── README.md                   # file readme

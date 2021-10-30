@@ -40,7 +40,7 @@
         </div>
       </nav>
 
-      <section style="margin-top: 100px;" >
+      <section style="margin-top: 80px;" >
     
       <h2 class="text-center" >Tetang Kami Kami</h2>
       <br><br>

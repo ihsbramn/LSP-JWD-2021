@@ -41,10 +41,10 @@
       </nav>
 
       <!-- jumbotron -->
-      <div class="jumbotron" style="background-image: url('img/jumbo.jpeg'); height:1000px; background-repeat: no-repeat; background-size: cover;">
+      <div class="jumbotron" style="background-image: url('img/jumbo.jpeg'); height:1010px; background-repeat: no-repeat; background-size: cover;">
         <div class="container">
-          <br><br><br><br><br><br>
-          <br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br>
           <h2 class="text-white" >Selamat Datang di JWDHOTEL</h1>
           <p class="lead text-white">Hotel Murah dan Terbaik</p>
           </div>

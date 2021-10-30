@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Harga JWD</title>
+    <title>Tetang Kami</title>
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -26,10 +26,10 @@
                 <a class="nav-link" href="produk.php">Produk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="daftarharga.php">Daftar Harga</a>
+                <a class="nav-link" href="daftarharga.php">Daftar Harga</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="tentangkami.php">Tetang Kami</a>
+                <a class="nav-link" href="tentangkami.php">Tetang Kami</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="pesankamar.php">Pesan Kamar</a>
@@ -42,44 +42,15 @@
 
       <section style="margin-top: 80px;" >
     
-      <h2 class="text-center" >Daftar Harga Kamar Kami</h2>
+      <h2 class="text-center" >Video kamar Deluxe</h2>
       <br><br>
-      <div class="container">
-      <table class="table border">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nama Kamar</th>
-            <th scope="col"> Gambar</th>
-            <th scope="col">Harga</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Standar</td>
-            <td><img src="img/murah.jpg" style="height: 100px; width:100px;" alt="standar"></td>
-            <td>Rp. 200.000</td>
-            <td><a href="pesankamar.php" class="btn btn-success">Pesan</a></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Deluxe</td>
-            <td><img src="img/lumayan.jpg" style="height: 100px; width:100px;" alt="standar"></td>
-            <td>Rp. 400.000</td>
-            <td><a href="pesankamar.php" class="btn btn-success">Pesan</a></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Family</td>
-            <td><img src="img/mahal.jpg" style="height: 100px; width:100px;" alt="standar"></td>
-            <td>Rp. 800.000</td>
-            <td><a href="pesankamar.php" class="btn btn-success">Pesan</a></td>
-          </tr>
-        </tbody>
-    </table>
-      </div>
+        <div class="container text-center">
+          <h2 class="text-center">JWDHOTEL</h2>
+          <p class="text-center" >Kamar Deluxe</p>
+          <iframe width="788" height="443" src="https://www.youtube.com/embed/RoS6Eh2wvck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br> <br>
+            <a href="pesankamar.php">Pesan Kamar Mu Sekarang Juga!</a>
+        </div>
       
       </section>
 

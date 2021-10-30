@@ -5,7 +5,12 @@ include'../connect.php';
 
     
 	
-if(isset($_POST['submit'])){
+
+    // print_r($_POST);
+
+    // var_dump($_POST);
+
+if(isset($_POST['Submit'])){
 
     $id=$_POST['id'];
     $nama=$_POST['nama'];
@@ -18,14 +23,16 @@ if(isset($_POST['submit'])){
 
 	$sql = 
 	"INSERT INTO pesanan
-		VALUES('$id','$nama','$nik','$jeniskelamin','$tipe','$durasi','$discount','$total')";
+		VALUES(' ','$nama','$nik','$jeniskelamin','$tipe','$durasi','$discount','$total')";
+
 	$query = mysqli_query($db, $sql);
 
-    if($query){
-        header('Location: ../index.php');
-    } else {
-        header('Location: ../pesankamar.php');
-    }
+    
+
+    // header('Location: ../index.php');
+
+    // echo($sql);
+    
 }
 ?>
 <!-- process -->

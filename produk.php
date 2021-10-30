@@ -40,7 +40,7 @@
             </div>
         </nav>
 
-        <section style="margin-top: 100px;">
+        <section style="margin-top: 80px;">
         <h2 class="text-center">Kamar Hotel Kami</h2>
         <br><br>
             <div class="container">
@@ -55,6 +55,7 @@
                         <div class="card-footer">
                         <a href="daftarharga.php" class="btn btn-primary">Cek Harga</a>
                         <a href="pesankamar.php" class="btn btn-success">Pesan</a>
+                        <a href="videostandar.php" class="btn btn-info">Lihat Video</a>
                         </div>
                     </div>
                     </div>
@@ -68,6 +69,7 @@
                                     <div class="card-footer">
                                     <a href="daftarharga.php" class="btn btn-primary">Cek Harga</a>
                                     <a href="pesankamar.php" class="btn btn-success">Pesan</a>
+                                    <a href="videodeluxe.php" class="btn btn-info">Lihat Video</a>
                                     </div>
                         </div>
                     </div>
@@ -83,6 +85,7 @@
                             <div class="card-footer">
                             <a href="daftarharga.php" class="btn btn-primary">Cek Harga</a>
                             <a href="pesankamar.php" class="btn btn-success">Pesan</a>
+                            <a href="videofamily.php" class="btn btn-info">Lihat Video</a>
                             </div>
                         </div>
                 </div>
