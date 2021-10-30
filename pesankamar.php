@@ -123,16 +123,29 @@
 
         function SetHarga2(e){
           durasi = document.getElementById('durasi').value;
-          harga = document.getElementById('harga').value;
-          if (document.getElementById('sarapan').checked) {
-              nyarap = (durasi - 1) * 80000;
-              total = (durasi * harga) + nyarap;
-              totalbayar = document.getElementById('total').value = total;
-          }else{
-              total = durasi * harga;
-              totalbayar = document.getElementById('total').value = total;
-          }
-          
+          if(durasi < 3){
+              harga = document.getElementById('harga').value;
+            if (document.getElementById('sarapan').checked) {
+                nyarap = (durasi - 1) * 80000;
+                total = (durasi * harga) + nyarap;
+                totalbayar = document.getElementById('total').value = total;
+            }else{
+                total = durasi * harga;
+                totalbayar = document.getElementById('total').value = total;
+            };
+          }else {
+            harga = document.getElementById('harga').value;
+            if (document.getElementById('sarapan').checked) {
+                nyarap = (durasi - 1) * 80000;
+                total = (durasi * harga) + nyarap;
+                disc = total * 0.01;
+                totalbayar = document.getElementById('total').value = total - disc;
+            }else{
+                total = durasi * harga;
+                disc = total * 0.01;
+                totalbayar = document.getElementById('total').value = total - disc;
+            };
+          }; 
         };
 
         // function SetHarga3(e){
