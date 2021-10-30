@@ -7,16 +7,16 @@ Struktur File .
 
     .
     ├── img                         # folder gambar             
-        ├──jumbo.jpeg
-        ├──lumayan.jpg
-        ├──mahal.jpg
-        └──murah.jpg                 
+        ├──jumbo.jpeg               # gambar jumbotron
+        ├──lumayan.jpg              # gambar deluxe
+        ├──mahal.jpg                # gambar family
+        └──murah.jpg                # gambar standard                
     ├── process                     # folder logika
-        └──proses_pesan.jpg                   
-    ├── connect.php                  
-    ├── daftarharga.php                    
-    ├── index.php                   
-    ├── pesankamar.php
-    ├── produk.php
-    ├── tetangkami.php
-    └── README.md
+        └──proses_pesan.jpg         # logika input pesanan         
+    ├── connect.php                 # connect database
+    ├── daftarharga.php             # halaman daftar harga    
+    ├── index.php                   # halaman index
+    ├── pesankamar.php              # halaman pesan kamar
+    ├── produk.php                  # halaman produk
+    ├── tetangkami.php              # halaman tentang kami
+    └── README.md                   # file readme
