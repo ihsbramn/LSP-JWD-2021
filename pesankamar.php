@@ -85,7 +85,7 @@
               <div class="form-group mb-3">
                 <label for="tipe">Tipe Kamar</label>
                 <!-- tipe -->
-                <select class="form-control" name="tipe" id="tipe" onchange="SetHarga(event);">
+                <select class="form-control" name="tipe" id="tipe" onchange="SetHarga()">
                   <option value="-">Pilih Kamar</option>
                   <option value="Family">Family</option>
                   <option value="Deluxe">Deluxe</option>
@@ -94,12 +94,16 @@
                 <!-- tipe -->
               </div>
               <div class="mb-3">
+                <!-- harga -->
                 <label for="harga" class="form-label">Harga</label>
                 <input  type="text" class="form-control"  id="harga" readonly>
+                <!-- harga -->
               </div>
               <div class="mb-3">
+                <!-- tgl -->
                 <label for="tgl" class="form-label">Tanggal Pesan</label>
                 <input type="date" class="form-control" id="tgl">
+                <!-- tgl -->
               </div>
               <div class="mb-3">
                 <label for="durasi" class="form-label">Durasi Menginap</label>
@@ -124,7 +128,7 @@
                 <input type="text" class="form-control" name="total" id="total" readonly>
                 <!-- total -->
               </div>
-              <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+              <button type="submit" name="Submit" class="btn btn-primary" onClick="return empty();" >Submit</button>
             </form>
             </div>
             <div class="col">
@@ -134,16 +138,27 @@
       </section>
       
       <script type='text/javascript'>
-        function SetHarga(e){
-          jenis = document.getElementById('tipe').value;
-          if (jenis = 'Standar'){
-            document.getElementById('harga').value = '200000';
-          }else if (jenis = 'Deluxe'){
-            document.getElementById('harga').value = '400000';
-          }else if (jenis = 'Family'){
-            document.getElementById('harga').value = '800000';
-          };
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        document.getElementById('tgl').setAttribute("min", today);
+
+        function SetHarga(){
+          tipe = document.getElementById('tipe').value;
+          if (tipe == 'Standar'){
+            document.getElementById('harga').value = 200000;
+          }else if (tipe == 'Deluxe'){
+            document.getElementById('harga').value = 400000;
+          }else{
+            document.getElementById('harga').value = 800000;
+          }
         };
+        
 
         function SetHarga2(e){
           durasi = document.getElementById('durasi').value;
@@ -152,36 +167,60 @@
             if (document.getElementById('sarapan').checked) {
                 nyarap = (durasi - 1) * 80000;
                 total = (durasi * harga) + nyarap;
-                totalbayar = document.getElementById('total').value = total;
+                totalbayar = total;
+                document.getElementById('total').value = (totalbayar.toLocaleString());
             }else{
                 total = durasi * harga;
-                totalbayar = document.getElementById('total').value = total;
+                totalbayar = total;
+                document.getElementById('total').value = (totalbayar.toLocaleString());
             };
           }else {
             harga = document.getElementById('harga').value;
+            diskon = document.getElementById('discount').value = '10%';
             if (document.getElementById('sarapan').checked) {
                 nyarap = (durasi - 1) * 80000;
                 total = (durasi * harga) + nyarap;
                 disc = total * 0.01;
-                totalbayar = document.getElementById('total').value = total - disc;
+                totalbayar = total - disc;
+                document.getElementById('total').value = (totalbayar.toLocaleString());
             }else{
                 total = durasi * harga;
                 disc = total * 0.01;
-                totalbayar = document.getElementById('total').value = total - disc;
+                totalbayar = total - disc;
+                document.getElementById('total').value = (totalbayar.toLocaleString());
             };
           }; 
         };
 
-        function keyDown(e) { 
-          var e = window.event || e;
-          var key = e.keyCode;
-          //space pressed
-          if (key == 32) { //space
-            alert('Tidak Boleh ada spasi!');
-            e.preventDefault();
-          }
-        
-        }
+        function empty() { 
+          var x;
+            x = document.getElementById("nama").value;
+            if (x == " ") {
+                alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "  "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "   "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "    "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "     "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "      "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "       "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }else if (x == "       "){
+              alert("Tidak Boleh Blank");
+                return false;
+            }
+        };
 
       </script>
 
