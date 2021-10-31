@@ -29,7 +29,7 @@ if(isset($_POST['Submit'])){
 
     
 
-    // header('Location: ../index.php');
+    header('Location: ../index.php');
 
     // echo($sql);
     

@@ -108,7 +108,7 @@
               <div class="mb-3">
                 <label for="durasi" class="form-label">Durasi Menginap</label>
                 <!-- durasi -->
-                <input type="number" class="form-control" name="durasi" id="durasi" onchange="SetHarga2(event); " min="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <input type="number" class="form-control" name="durasi" id="durasi" onchange="SetHarga2(event); " value="1" min="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                 <!-- durasi -->
               </div>
               <div class="form-check mb-3">
@@ -125,7 +125,8 @@
               <div class="mb-3">
                 <label for="total" class="form-label">Total Bayar</label>
                 <!-- total -->
-                <input type="text" class="form-control" name="total" id="total" readonly>
+                <input type="text" class="form-control" name="total1" id="total1" readonly>
+                <input type="text" class="form-control" name="total" id="total" hidden readonly>
                 <!-- total -->
               </div>
               <button type="submit" name="Submit" class="btn btn-primary" onClick="return empty();" >Submit</button>
@@ -163,31 +164,36 @@
         function SetHarga2(e){
           durasi = document.getElementById('durasi').value;
           if(durasi < 3){
+              diskon = document.getElementById('discount').value = 'No';
               harga = document.getElementById('harga').value;
             if (document.getElementById('sarapan').checked) {
                 nyarap = (durasi - 1) * 80000;
                 total = (durasi * harga) + nyarap;
                 totalbayar = total;
-                document.getElementById('total').value = (totalbayar.toLocaleString());
+                document.getElementById('total1').value = (totalbayar.toLocaleString());
+                document.getElementById('total').value = totalbayar;
             }else{
                 total = durasi * harga;
                 totalbayar = total;
-                document.getElementById('total').value = (totalbayar.toLocaleString());
+                document.getElementById('total1').value = (totalbayar.toLocaleString());
+                document.getElementById('total').value = totalbayar;
             };
           }else {
             harga = document.getElementById('harga').value;
-            diskon = document.getElementById('discount').value = '10%';
+            diskon = document.getElementById('discount').value = 'Yes';
             if (document.getElementById('sarapan').checked) {
                 nyarap = (durasi - 1) * 80000;
                 total = (durasi * harga) + nyarap;
                 disc = total * 0.01;
                 totalbayar = total - disc;
-                document.getElementById('total').value = (totalbayar.toLocaleString());
+                document.getElementById('total1').value = (totalbayar.toLocaleString());
+                document.getElementById('total').value = totalbayar;
             }else{
                 total = durasi * harga;
                 disc = total * 0.01;
                 totalbayar = total - disc;
-                document.getElementById('total').value = (totalbayar.toLocaleString());
+                document.getElementById('total1').value = (totalbayar.toLocaleString());
+                document.getElementById('total').value = totalbayar;
             };
           }; 
         };
