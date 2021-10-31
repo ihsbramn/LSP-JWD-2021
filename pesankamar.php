@@ -183,14 +183,14 @@
             diskon = document.getElementById('discount').value = 'Yes';
             if (document.getElementById('sarapan').checked) {
                 nyarap = (durasi - 1) * 80000;
-                total = (durasi * harga) + nyarap;
-                disc = total * 0.01;
-                totalbayar = total - disc;
+                total = durasi * harga;
+                disc = total * 0.1;
+                totalbayar = (total - disc)+nyarap;
                 document.getElementById('total1').value = (totalbayar.toLocaleString());
                 document.getElementById('total').value = totalbayar;
             }else{
                 total = durasi * harga;
-                disc = total * 0.01;
+                disc = total * 0.1;
                 totalbayar = total - disc;
                 document.getElementById('total1').value = (totalbayar.toLocaleString());
                 document.getElementById('total').value = totalbayar;
@@ -200,31 +200,31 @@
 
         function empty() { 
           var x;
-            x = document.getElementById("nama").value;
-            if (x == " ") {
-                alert("Tidak Boleh Blank");
+            x = document.getElementById("nama").value.trim();
+            if (x == "") {
+                alert("Nama Tidak Boleh Blank");
                 return false;
-            }else if (x == "  "){
-              alert("Tidak Boleh Blank");
-                return false;
-            }else if (x == "   "){
-              alert("Tidak Boleh Blank");
-                return false;
-            }else if (x == "    "){
-              alert("Tidak Boleh Blank");
-                return false;
-            }else if (x == "     "){
-              alert("Tidak Boleh Blank");
-                return false;
-            }else if (x == "      "){
-              alert("Tidak Boleh Blank");
-                return false;
-            }else if (x == "       "){
-              alert("Tidak Boleh Blank");
-                return false;
-            }else if (x == "       "){
-              alert("Tidak Boleh Blank");
-                return false;
+            // }else if (x == "  "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
+            // }else if (x == "   "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
+            // }else if (x == "    "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
+            // }else if (x == "     "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
+            // }else if (x == "      "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
+            // }else if (x == "       "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
+            // }else if (x == "       "){
+            //   alert("Nama Tidak Boleh Blank");
+            //     return false;
             }
         };
 
